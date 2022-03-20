@@ -1,19 +1,22 @@
 #!/usr/bin/python
 # main.py
 import urllib.request
+from datetime import datetime
+
 commentChar = "#"
 specialnets = ("127.0.0.1", "255.255.255.255", "::1", "f")
 defaultRoute = "0.0.0.0"
 blocklist = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+now = datetime.now()
 zoneHeader = """$TTL 2w
 @ IN SOA localhost. root.localhost. (
-       3   ; serial 
+       %s  ; serial 
        2w  ; refresh 
        2w  ; retry 
        2w  ; expiry 
        2w) ; minimum 
     IN NS localhost."""
-print(zoneHeader)
+print(zoneHeader % now.strftime("%Y%m%d%H"))
 
 with urllib.request.urlopen(blocklist) as f:
  for bytes in f:
