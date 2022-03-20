@@ -1,0 +1,4 @@
+
+Inspired by https://medium.com/@d.robertson/dns-level-ad-blocking-on-lan-with-bind-rpz-32dbfdf2e4fe
+but fixed lines with comment and bash script for crontab execution and zone reload
+
