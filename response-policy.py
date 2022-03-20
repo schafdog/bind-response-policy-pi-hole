@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # main.py
 import urllib.request
 commentChar = "#"
@@ -34,5 +35,5 @@ with urllib.request.urlopen(blocklist) as f:
   if domain == defaultRoute:
    continue
   
-  print(domain, " CNAME . ", comment, sep="")
+  print(domain, " CNAME . ", sep="")
   print("*.", domain, " CNAME .", sep="")
