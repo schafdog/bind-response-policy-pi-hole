@@ -38,5 +38,5 @@ with urllib.request.urlopen(blocklist) as f:
   if domain == defaultRoute:
    continue
   
-  print(domain, " CNAME . ", sep="")
+  print(domain, " CNAME .", sep="")
   print("*.", domain, " CNAME .", sep="")
